@@ -43,8 +43,8 @@ def main():
     sigma_montante, sigma_jusante = calculate_normal_stresses(B, H, g, rho_conc, rho_agua, z)
     plot_normal_stresses(sigma_montante, sigma_jusante, B)
 
-    st.write("Tensão normal a montante:", sigma_montante/1000, "kPa")
-    st.write("Tensão normal a jusante:", sigma_jusante/1000, "kPa")
+    st.markdown(f"**Tensão normal a montante:** {sigma_montante/1000:.4f} kPa")
+    st.markdown(f"**Tensão normal a jusante:** {sigma_jusante/1000:.4f} kPa")
 
 if __name__ == "__main__":
     main()
