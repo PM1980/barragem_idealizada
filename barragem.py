@@ -22,12 +22,12 @@ def calculate_normal_stresses(B, H, g, rho_conc, rho_agua, z):
 def plot_normal_stresses(sigma_montante, sigma_jusante):
     x = [0, B]
     y = [sigma_montante / 1000, sigma_jusante / 1000]
-    plt.plot(x, y)
+    fig = plt.plot(x, y)
     plt.axhline(0, color='r', linestyle='--')
     plt.xlabel('posição medida a partir de montante (m)')
     plt.ylabel('tensão normal (kPa)')
     plt.grid(True)
-    st.pyplot()
+    st.pyplot(fig)
 
 def main():
     st.title("Dam Normal Stresses")
