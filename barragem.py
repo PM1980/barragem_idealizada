@@ -19,15 +19,15 @@ def calculate_normal_stresses(B, H, g, rho_conc, rho_agua, z):
 
     return sigma_montante, sigma_jusante
 
-def plot_normal_stresses(sigma_montante, sigma_jusante):
+def plot_normal_stresses(sigma_montante, sigma_jusante, B):
     x = [0, B]
     y = [sigma_montante / 1000, sigma_jusante / 1000]
-    fig = plt.plot(x, y)
+    plt.plot(x, y)
     plt.axhline(0, color='r', linestyle='--')
     plt.xlabel('posição medida a partir de montante (m)')
     plt.ylabel('tensão normal (kPa)')
     plt.grid(True)
-    st.pyplot(fig)
+    st.pyplot()
 
 def main():
     st.title("Dam Normal Stresses")
@@ -40,7 +40,7 @@ def main():
     z = st.number_input("Elevação de cálculo (m)", value=0.0)
 
     sigma_montante, sigma_jusante = calculate_normal_stresses(B, H, g, rho_conc, rho_agua, z)
-    plot_normal_stresses(sigma_montante, sigma_jusante)
+    plot_normal_stresses(sigma_montante, sigma_jusante, B)
 
     st.write("Tensão normal a montante:", sigma_montante, "Pa")
     st.write("Tensão normal a jusante:", sigma_jusante, "Pa")
