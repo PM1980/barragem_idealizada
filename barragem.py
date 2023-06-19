@@ -31,7 +31,19 @@ def plot_normal_stresses(sigma_montante, sigma_jusante, B):
     st.pyplot(fig)
 
 def main():
-    st.title("Dam Normal Stresses")
+    st.title("Tensões normais em uma barragem idealizada")
+
+        st.markdown(
+        '''
+        <div style="border: 1px solid black; padding: 10px;">
+            Universidade Federal de Pernambuco - UFPE / Departamento de Engenharia Civil - DECIV <br>
+            Aplicativo desenvolvido para a disciplina CI219 - Resistência dos Materiais 2A <br>
+            Autor: Paulo M. V. Ribeiro <br>
+            Data: 06/2023
+        </div>
+        ''',
+        unsafe_allow_html=True
+    )
 
     B = st.number_input("Base da barragem (m)", value=5.0)
     H = st.number_input("Altura da barragem (m)", value=10.0)
